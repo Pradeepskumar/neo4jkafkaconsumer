@@ -17,7 +17,7 @@ public class KafkaService {
     System.out.println(String.format("Message recieved -> %s", message));
   }
 
-  @KafkaListener(topics = "Example_Topic_24", groupId = "group_json", containerFactory = "userKafkaListener")
+  @KafkaListener(topics = "Example_Topic_JSON", groupId = "group_json", containerFactory = "userKafkaListener")
   public void consume(PersonDTO personDTO) {
     System.out.println("Message recieved -> %s" + personDTO);
     consumerService.savetoDB(personDTO);
